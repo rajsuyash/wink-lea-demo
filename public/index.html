@@ -16,18 +16,12 @@
 <!-- ============ NAV ============ -->
 <header class="nav">
   <a class="nav-logo" href="#">
+    <span class="logo-text">WINK</span>
     <span class="logo-mark" aria-hidden="true">
       <svg viewBox="0 0 32 32" fill="none">
-        <defs>
-          <linearGradient id="wgrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#1677FF"/>
-            <stop offset="1" stop-color="#6B5BFF"/>
-          </linearGradient>
-        </defs>
-        <path d="M2 8 L8 24 L12 16 L16 24 L20 16 L24 24 L30 8" stroke="url(#wgrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 18 Q 12 28 18 14 Q 22 6 28 10" stroke="#1A6DFF" stroke-width="5" stroke-linecap="round" fill="none"/>
       </svg>
     </span>
-    <span class="logo-text">Wink<span class="logo-ai">.ai</span></span>
   </a>
   <nav class="nav-links">
     <a href="#produit">Produit</a>
@@ -200,13 +194,12 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
+      <span class="logo-text">WINK</span>
       <span class="logo-mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" fill="none">
-          <use href="#"></use>
-          <path d="M2 8 L8 24 L12 16 L16 24 L20 16 L24 24 L30 8" stroke="url(#wgrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 18 Q 12 28 18 14 Q 22 6 28 10" stroke="#1A6DFF" stroke-width="5" stroke-linecap="round" fill="none"/>
         </svg>
       </span>
-      <span class="logo-text">Wink<span class="logo-ai">.ai</span></span>
     </div>
     <p class="footer-copy">© Wink. Démo réalisée pour la pré-qualification de candidatures dans le secteur public français. Cette page est un prototype client — toute donnée saisie n'est pas conservée.</p>
   </div>
@@ -244,33 +237,25 @@
 
       <!-- Stage: pre-call brief -->
       <div class="stage stage-brief" data-stage="brief">
-        <div class="brief-grid">
-          <div class="brief-card">
-            <span class="brief-label">Candidate</span>
-            <strong>Candidate confidentiel·le</strong>
-            <span class="brief-meta">Données minimisées RGPD</span>
-          </div>
-          <div class="brief-card">
-            <span class="brief-label">Poste</span>
-            <strong>Agent comptable</strong>
-            <span class="brief-meta">Montélimar-Agglomération</span>
-          </div>
-          <div class="brief-card">
-            <span class="brief-label">Durée</span>
-            <strong>~ 8 minutes</strong>
-            <span class="brief-meta">8 questions techniques</span>
-          </div>
+        <div class="brief-intro">
+          <span class="brief-eyebrow">Étape 1 sur 2</span>
+          <h3>Choisissez le CV à interviewer</h3>
+          <p>Léa lit le CV sélectionné et adapte son entretien : ton, profondeur des questions techniques, points à creuser. Les 8 questions du questionnaire Wink sont couvertes en tant que lignes directrices, dans l'ordre qui colle au profil.</p>
+        </div>
+
+        <div class="cv-picker" id="cv-picker">
+          <!-- populated by app.js from window.WINK_CVS -->
         </div>
 
         <div class="consent">
-          <p><strong>Avant de démarrer :</strong> Léa est une IA. Cet échange n'est conservé que le temps de la session. Aucune donnée n'est transmise à un tiers. Cliquez ci-dessous pour autoriser votre micro.</p>
+          <p><strong>Avant de démarrer :</strong> Léa est une IA. Cet échange n'est conservé que le temps de la session. Aucune donnée candidat n'est transmise à un tiers. Cliquez ci-dessous pour autoriser votre micro.</p>
         </div>
 
-        <button class="btn btn-primary btn-xl btn-start" id="btn-start" type="button">
+        <button class="btn btn-primary btn-xl btn-start" id="btn-start" type="button" disabled>
           <span class="btn-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
           </span>
-          <span id="btn-start-label">Autoriser le micro et démarrer</span>
+          <span id="btn-start-label">Sélectionnez un CV pour démarrer</span>
         </button>
       </div>
 
@@ -332,6 +317,7 @@
 <script src="https://unpkg.com/@elevenlabs/client@1.7.0/dist/lib.iife.js"
         integrity="sha384-ss1PbqLcbnf7xEFU7qGCIukLL4lbjzCNq7PAjgRsKRelIIyJECt8iFKvJDlASKXw"
         crossorigin="anonymous"></script>
+<script src="./cvs.js"></script>
 <script src="./app.js"></script>
 </body>
 </html>

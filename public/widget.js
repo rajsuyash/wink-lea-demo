@@ -21,9 +21,10 @@
     label: "Démarrer un entretien IA",
     position: "bottom-right",  // bottom-right | bottom-left
     zIndex: 999999,
-    primary: "#1677FF",
-    accent: "#6B5BFF",
-    background: "#0A0A14"
+    primary: "#1A6DFF",   // Wink bright blue (matches wink-lab.com)
+    primaryHover: "#0A55E0",
+    accent: "#00C2FF",
+    textOnPrimary: "#FFFFFF"
   };
 
   const SCRIPT_TAG = document.currentScript;
@@ -61,24 +62,25 @@
         bottom: 24px;
         z-index: ${config.zIndex};
         display: inline-flex; align-items: center; gap: 12px;
-        padding: 10px 20px 10px 10px;
-        background: ${config.background};
-        color: #fff;
-        border: 1px solid rgba(255,255,255,0.14);
+        padding: 10px 22px 10px 10px;
+        background: ${config.primary};
+        color: ${config.textOnPrimary};
+        border: 0;
         border-radius: 999px;
-        box-shadow: 0 20px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(22,119,255,0.18);
+        box-shadow: 0 14px 36px rgba(26, 109, 255, 0.45);
         font-family: "Montserrat", "Inter", -apple-system, sans-serif;
-        font-weight: 600;
-        font-size: 14px;
+        font-weight: 700;
+        font-size: 14.5px;
+        letter-spacing: -0.01em;
         cursor: pointer;
-        transition: transform .2s ease, box-shadow .2s ease;
+        transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
       }
-      .wink-lea-launcher:hover { transform: translateY(-3px); box-shadow: 0 24px 56px rgba(22,119,255,0.4); }
+      .wink-lea-launcher:hover { transform: translateY(-3px); background: ${config.primaryHover}; box-shadow: 0 18px 44px rgba(26, 109, 255, 0.55); }
       .wink-lea-orb {
         position: relative;
         width: 40px; height: 40px;
         border-radius: 50%;
-        background: linear-gradient(135deg, ${config.primary}, ${config.accent});
+        background: rgba(255, 255, 255, 0.18);
         display: inline-flex; align-items: center; justify-content: center;
         color: white;
         flex: 0 0 40px;
@@ -86,7 +88,7 @@
       .wink-lea-orb svg { width: 18px; height: 18px; }
       .wink-lea-ring {
         position: absolute; inset: 0; border-radius: 50%;
-        border: 2px solid ${config.primary};
+        border: 2px solid rgba(255, 255, 255, 0.9);
         animation: winkLeaRing 2.4s ease-out infinite;
         pointer-events: none;
       }
@@ -99,9 +101,9 @@
         position: fixed; inset: 0;
         z-index: ${config.zIndex + 1};
         display: none;
-        background: rgba(5, 5, 10, 0.85);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(10, 26, 74, 0.55);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         animation: winkLeaFade .25s ease;
       }
       .wink-lea-shell.open { display: block; }

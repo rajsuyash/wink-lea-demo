@@ -26,6 +26,48 @@ let conversation = null;
 let starting = false;       // synchronous guard — prevents race on rapid clicks
 let muted = false;
 let textMode = false;
+let selectedCv = null;      // populated when user clicks a CV card
+
+// === CV picker ===
+function renderCvPicker() {
+  const host = document.getElementById("cv-picker");
+  if (!host || !window.WINK_CVS) return;
+  host.innerHTML = "";
+  window.WINK_CVS.forEach((cv) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "cv-card";
+    btn.dataset.cvId = cv.id;
+    btn.innerHTML = `
+      <span class="cv-card-avatar">${cv.initials}</span>
+      <span class="cv-card-body">
+        <span class="cv-card-name">${cv.displayName}</span>
+        <span class="cv-card-role">${cv.role}</span>
+        <span class="cv-card-headline">${cv.headline}</span>
+        <span class="cv-card-badge">${cv.badge}</span>
+      </span>
+      <span class="cv-card-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+      </span>
+    `;
+    btn.addEventListener("click", () => selectCv(cv.id));
+    host.appendChild(btn);
+  });
+}
+function selectCv(id) {
+  selectedCv = window.WINK_CVS.find((c) => c.id === id) || null;
+  document.querySelectorAll(".cv-card").forEach((c) => {
+    c.classList.toggle("selected", c.dataset.cvId === id);
+  });
+  if (btnStart) {
+    btnStart.disabled = !selectedCv;
+    if (btnStartLabel) {
+      btnStartLabel.textContent = selectedCv
+        ? `Démarrer l'entretien avec ${selectedCv.displayName}`
+        : "Sélectionnez un CV pour démarrer";
+    }
+  }
+}
 
 // === Stage controller ===
 function setStage(name) {
@@ -116,6 +158,10 @@ async function requestMic() {
 if (btnStart) {
   btnStart.addEventListener("click", async () => {
     if (conversation || starting) return;
+    if (!selectedCv) {
+      setStatus("Sélectionnez un CV avant de démarrer", "error");
+      return;
+    }
     starting = true;
     btnStart.disabled = true;
     if (btnStartLabel) btnStartLabel.textContent = "Connexion…";
@@ -123,23 +169,30 @@ if (btnStart) {
     const ok = await requestMic();
     if (!ok) {
       btnStart.disabled = false;
-      if (btnStartLabel) btnStartLabel.textContent = "Autoriser le micro et démarrer";
+      if (btnStartLabel) btnStartLabel.textContent = `Démarrer l'entretien avec ${selectedCv.displayName}`;
       starting = false;
       setStatus("Micro refusé — autorisez l'accès et réessayez", "error");
       return;
     }
 
     setStage("live");
-    setStatus("Connexion à Léa…", "connecting");
+    setStatus(`Connexion à Léa — entretien : ${selectedCv.displayName}`, "connecting");
     setOrbMode(null);
 
     try {
       if (!window.ElevenLabsClient || !window.ElevenLabsClient.Conversation) {
         throw new Error("SDK ElevenLabs non chargé.");
       }
+      const overrides = {
+        agent: {
+          firstMessage: selectedCv.firstMessage,
+          prompt: { prompt: window.WINK_BUILD_PROMPT(selectedCv) }
+        }
+      };
       conversation = await window.ElevenLabsClient.Conversation.startSession({
         agentId: AGENT_ID,
         connectionType: "websocket",
+        overrides,
         onConnect: () => {
           starting = false;
           setStatus("En ligne avec Léa", "live");
@@ -184,12 +237,19 @@ if (btnStart) {
       console.error("Failed to start session:", err);
       starting = false;
       btnStart.disabled = false;
-      if (btnStartLabel) btnStartLabel.textContent = "Autoriser le micro et démarrer";
+      if (btnStartLabel) {
+        btnStartLabel.textContent = selectedCv
+          ? `Démarrer l'entretien avec ${selectedCv.displayName}`
+          : "Sélectionnez un CV pour démarrer";
+      }
       setStatus("Démarrage impossible — réessayer ?", "error");
       setStage("brief");
     }
   });
 }
+
+// Initial render of the CV picker
+renderCvPicker();
 
 // === Mute toggle ===
 if (btnMute) {

@@ -49,33 +49,23 @@
 
     <div class="modal-body">
       <div class="stage stage-brief active" data-stage="brief">
-        <div class="brief-grid">
-          <div class="brief-card">
-            <span class="brief-label">Candidat</span>
-            <strong>Préqualification IA</strong>
-            <span class="brief-meta">Entretien vocal automatisé</span>
-          </div>
-          <div class="brief-card">
-            <span class="brief-label">Poste</span>
-            <strong>Configuré par Wink</strong>
-            <span class="brief-meta">Vos questions, vos critères</span>
-          </div>
-          <div class="brief-card">
-            <span class="brief-label">Durée</span>
-            <strong>~ 8 minutes</strong>
-            <span class="brief-meta">Compte-rendu immédiat</span>
-          </div>
+        <div class="brief-intro">
+          <span class="brief-eyebrow">Étape 1 sur 2</span>
+          <h3>Choisissez le CV à interviewer</h3>
+          <p>Léa lit le CV et adapte son entretien : ton, profondeur, points à creuser. Les 8 questions du questionnaire Wink sont couvertes comme lignes directrices.</p>
         </div>
+
+        <div class="cv-picker" id="cv-picker"></div>
 
         <div class="consent">
-          <p><strong>Avant de démarrer :</strong> Léa est une IA. Cet échange est conservé sous votre politique RGPD. Aucune donnée ne sort de l'Union européenne. Cliquez ci-dessous pour autoriser votre micro.</p>
+          <p><strong>Avant de démarrer :</strong> Léa est une IA. Cet échange n'est conservé que le temps de la session. Aucune donnée n'est transmise à un tiers. Cliquez ci-dessous pour autoriser votre micro.</p>
         </div>
 
-        <button class="btn btn-primary btn-xl btn-start" id="btn-start" type="button">
+        <button class="btn btn-primary btn-xl btn-start" id="btn-start" type="button" disabled>
           <span class="btn-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
           </span>
-          <span id="btn-start-label">Autoriser le micro et démarrer</span>
+          <span id="btn-start-label">Sélectionnez un CV pour démarrer</span>
         </button>
       </div>
 
@@ -135,9 +125,9 @@
         integrity="sha384-ss1PbqLcbnf7xEFU7qGCIukLL4lbjzCNq7PAjgRsKRelIIyJECt8iFKvJDlASKXw"
         crossorigin="anonymous"></script>
 <script>
-// Stub the elements that app.js expects; reuse the same wiring.
 window.WINK_EMBED_MODE = true;
 </script>
+<script src="./cvs.js"></script>
 <script src="./app.js"></script>
 <script>
 // Embed-specific: bridge close buttons to parent window via postMessage.
