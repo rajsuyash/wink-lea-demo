@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.*
+
+# OS
+.DS_Store
+
+# Build artifacts
+node_modules/
+dist/
+
+# Logs / runtime
+*.log
+scripts/agent-ids.txt
+
+# Candidate PII — never commit to public repo
+*.doc
+*.docx
+CV*
+LM*
+QUESTIONNAIRE*
+CHARGE*
+
+# Real candidate KB (re-uploaded directly to ElevenLabs, never to git)
+kb/wink-recruitment-fr.md
+
+# Empty placeholder dirs
+src/
+docs/

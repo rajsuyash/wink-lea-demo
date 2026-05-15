@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A14">
+<title>Wink — Préqualification IA des candidatures</title>
+<meta name="description" content="Wink déploie Léa, une assistante vocale IA qui préqualifie les candidats à votre place. Démonstration pour collectivités et services publics français.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <a class="nav-logo" href="#">
+    <span class="logo-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none">
+        <defs>
+          <linearGradient id="wgrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#1677FF"/>
+            <stop offset="1" stop-color="#6B5BFF"/>
+          </linearGradient>
+        </defs>
+        <path d="M2 8 L8 24 L12 16 L16 24 L20 16 L24 24 L30 8" stroke="url(#wgrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="logo-text">Wink<span class="logo-ai">.ai</span></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#produit">Produit</a>
+    <a href="#flux">Démarche</a>
+    <a href="#securite">Conformité</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="btn btn-primary nav-cta" data-open-interview type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+    Démarrer une démo
+  </button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-orb"></div>
+    <div class="hero-grid"></div>
+  </div>
+
+  <div class="hero-inner">
+    <span class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Démo client — Montélimar-Agglomération
+    </span>
+    <h1 class="hero-title">
+      L'entretien de préqualification,<br>
+      <span class="grad">automatisé. À la voix. En français.</span>
+    </h1>
+    <p class="hero-sub">
+      Wink déploie <strong>Léa</strong>, une assistante vocale IA qui mène un entretien
+      de 8 minutes avec chaque candidat reçu sur vos offres. Léa pose vos questions
+      techniques, évalue les réponses, et transmet un compte-rendu structuré à votre
+      équipe RH dès la fin de l'appel.
+    </p>
+
+    <div class="hero-cta-row">
+      <button class="btn btn-primary btn-xl" data-open-interview type="button">
+        <span class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </span>
+        Démarrer un entretien
+      </button>
+      <a class="btn btn-ghost btn-xl" href="#flux">Voir comment ça marche</a>
+    </div>
+
+    <ul class="hero-trust">
+      <li><strong>RGPD</strong><span>Hébergement UE, conservation 6 mois</span></li>
+      <li><strong>8 questions</strong><span>Strictement techniques, posées dans l'ordre</span></li>
+      <li><strong>Sous 24 h</strong><span>Compte-rendu RH livré en 4 minutes</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PRODUIT ============ -->
+<section class="section" id="produit">
+  <div class="section-head">
+    <span class="eyebrow eyebrow-static">Le produit</span>
+    <h2>Trois choses que Léa fait que vos chargés RH n'ont pas le temps de faire</h2>
+  </div>
+  <div class="features">
+    <article class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>Appeler 100 % des candidats reçus</h3>
+      <p>Pas de tri préalable, pas de candidat oublié. Léa appelle chaque CV reçu
+        sous 24 heures et mène un entretien complet, même la nuit, même le week-end.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <h3>Vos questions, dans votre ordre</h3>
+      <p>Vous fournissez le questionnaire, Léa le pose. Pas d'improvisation IA, pas de
+        question hors-sol. Chaque candidat reçoit exactement le même protocole.</p>
+    </article>
+    <article class="feature">
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+      </div>
+      <h3>Compte-rendu prêt pour la commission</h3>
+      <p>Score, transcription complète, points de vigilance, recommandation
+        (rencontrer / écarter / reconvoquer). Livré en PDF horodaté, signable.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ FLUX ============ -->
+<section class="section section-alt" id="flux">
+  <div class="section-head">
+    <span class="eyebrow eyebrow-static">La démarche</span>
+    <h2>De la candidature reçue au compte-rendu RH, en quatre temps</h2>
+  </div>
+  <ol class="flow">
+    <li>
+      <span class="flow-num">01</span>
+      <h3>CV + questionnaire transmis à Wink</h3>
+      <p>Vous adressez le CV du candidat, la fiche de poste et la liste des
+        questions techniques à poser. Léa est briefée en moins de deux minutes.</p>
+    </li>
+    <li>
+      <span class="flow-num">02</span>
+      <h3>Léa appelle le candidat</h3>
+      <p>Appel téléphonique ou conversation web. 6 à 10 minutes. Annonce IA dès
+        la première seconde. Enregistrement et consentement RGPD intégrés.</p>
+    </li>
+    <li>
+      <span class="flow-num">03</span>
+      <h3>Évaluation automatisée</h3>
+      <p>Léa note l'expérience, la maîtrise technique, la disponibilité, la mobilité,
+        les prétentions salariales et la qualité de communication.</p>
+    </li>
+    <li>
+      <span class="flow-num">04</span>
+      <h3>Compte-rendu transmis</h3>
+      <p>Vous recevez un PDF signé : score global, transcription, recommandation,
+        points d'attention. Décision finale 100 % humaine.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ SECURITE ============ -->
+<section class="section" id="securite">
+  <div class="section-head">
+    <span class="eyebrow eyebrow-static">Conformité</span>
+    <h2>Construit pour la commande publique française</h2>
+  </div>
+  <div class="compliance">
+    <div class="compliance-card">
+      <h4>RGPD</h4>
+      <p>Hébergement Union européenne. Consentement explicite avant enregistrement.
+        Conservation 6 mois. Droit d'accès, rectification et suppression sur demande.</p>
+    </div>
+    <div class="compliance-card">
+      <h4>Non-discrimination</h4>
+      <p>Léa n'a pas accès à l'âge, à l'état civil, à l'origine, à la situation
+        familiale, à la religion ou à l'état de santé du candidat. Question filtrées
+        à la racine.</p>
+    </div>
+    <div class="compliance-card">
+      <h4>Transparence IA</h4>
+      <p>Annonce IA obligatoire dès la première seconde de l'appel.
+        Conforme à l'AI Act (article 50 — obligation de divulgation).</p>
+    </div>
+    <div class="compliance-card">
+      <h4>Souveraineté</h4>
+      <p>Voix synthétisée par ElevenLabs (UE). LLM sous contrat
+        données. Aucune donnée candidat envoyée hors UE.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINALE ============ -->
+<section class="section cta-final" id="contact">
+  <div class="cta-inner">
+    <h2>Vous voulez entendre Léa avant la commission RH ?</h2>
+    <p>Démo en direct, sans inscription, sans transmission de données.
+      Cliquez, autorisez votre micro, et parlez à Léa comme si vous étiez la candidate.</p>
+    <button class="btn btn-primary btn-xl" data-open-interview type="button">
+      <span class="btn-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      </span>
+      Démarrer la démo
+    </button>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none">
+          <use href="#"></use>
+          <path d="M2 8 L8 24 L12 16 L16 24 L20 16 L24 24 L30 8" stroke="url(#wgrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="logo-text">Wink<span class="logo-ai">.ai</span></span>
+    </div>
+    <p class="footer-copy">© Wink. Démo réalisée pour la pré-qualification de candidatures dans le secteur public français. Cette page est un prototype client — toute donnée saisie n'est pas conservée.</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING LAUNCHER ============ -->
+<button class="float-launcher" data-open-interview type="button" aria-label="Démarrer un entretien">
+  <span class="float-orb">
+    <span class="float-ring"></span>
+    <span class="float-ring float-ring-2"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+  </span>
+  <span class="float-label">Démarrer un entretien IA</span>
+</button>
+
+<!-- ============ FULLSCREEN INTERVIEW MODAL ============ -->
+<div class="modal" id="interview-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+  <div class="modal-backdrop" data-close-interview></div>
+
+  <div class="modal-panel">
+    <header class="modal-head">
+      <div class="modal-head-left">
+        <span class="modal-status-dot" id="status-dot"></span>
+        <div>
+          <h2 class="modal-title" id="modal-title">Entretien avec Léa</h2>
+          <p class="modal-sub" id="modal-status">Prêt à démarrer</p>
+        </div>
+      </div>
+      <button class="modal-close" data-close-interview type="button" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </header>
+
+    <div class="modal-body">
+
+      <!-- Stage: pre-call brief -->
+      <div class="stage stage-brief" data-stage="brief">
+        <div class="brief-grid">
+          <div class="brief-card">
+            <span class="brief-label">Candidate</span>
+            <strong>Candidate confidentiel·le</strong>
+            <span class="brief-meta">Données minimisées RGPD</span>
+          </div>
+          <div class="brief-card">
+            <span class="brief-label">Poste</span>
+            <strong>Agent comptable</strong>
+            <span class="brief-meta">Montélimar-Agglomération</span>
+          </div>
+          <div class="brief-card">
+            <span class="brief-label">Durée</span>
+            <strong>~ 8 minutes</strong>
+            <span class="brief-meta">8 questions techniques</span>
+          </div>
+        </div>
+
+        <div class="consent">
+          <p><strong>Avant de démarrer :</strong> Léa est une IA. Cet échange n'est conservé que le temps de la session. Aucune donnée n'est transmise à un tiers. Cliquez ci-dessous pour autoriser votre micro.</p>
+        </div>
+
+        <button class="btn btn-primary btn-xl btn-start" id="btn-start" type="button">
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </span>
+          <span id="btn-start-label">Autoriser le micro et démarrer</span>
+        </button>
+      </div>
+
+      <!-- Stage: live call -->
+      <div class="stage stage-live" data-stage="live">
+        <div class="orb-wrap">
+          <div class="orb" id="orb">
+            <div class="orb-bars" id="orb-bars">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="orb-ring orb-ring-1"></div>
+          <div class="orb-ring orb-ring-2"></div>
+          <div class="orb-ring orb-ring-3"></div>
+        </div>
+
+        <div class="live-status" id="live-status">Connexion à Léa…</div>
+
+        <div class="transcript" id="transcript" aria-live="polite">
+          <p class="transcript-empty">La transcription apparaît ici en direct.</p>
+        </div>
+
+        <div class="live-controls">
+          <button class="ctrl" id="btn-mute" type="button" aria-pressed="false" aria-label="Couper le micro">
+            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span class="ctrl-label">Micro</span>
+          </button>
+          <button class="ctrl ctrl-end" id="btn-end" type="button">
+            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="23" y1="1" x2="1" y2="23"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91"/></svg>
+            <span class="ctrl-label">Terminer</span>
+          </button>
+          <button class="ctrl" id="btn-text" type="button" aria-label="Saisie texte">
+            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="ctrl-label">Texte</span>
+          </button>
+        </div>
+
+        <form class="text-fallback" id="text-fallback" hidden>
+          <input type="text" id="text-input" placeholder="Saisir votre réponse en français…" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+      </div>
+
+      <!-- Stage: ended -->
+      <div class="stage stage-end" data-stage="end">
+        <div class="end-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Entretien terminé</h3>
+        <p>Le compte-rendu sera transmis à l'équipe RH de Montélimar-Agglomération.<br>Retour attendu sous 5 à 7 jours ouvrés.</p>
+        <button class="btn btn-ghost" data-close-interview type="button">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@elevenlabs/client@1.7.0/dist/lib.iife.js"
+        integrity="sha384-ss1PbqLcbnf7xEFU7qGCIukLL4lbjzCNq7PAjgRsKRelIIyJECt8iFKvJDlASKXw"
+        crossorigin="anonymous"></script>
+<script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wink — Entretien avec Léa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="./styles.css">
+<style>
+  /* Embed-only overrides: no nav, no hero, no sections — modal lives full-bleed */
+  body { background: transparent; }
+  .embed-shell {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    padding: 0;
+    background: rgba(5, 5, 10, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .embed-shell .modal-panel {
+    max-width: 720px;
+    max-height: 92vh;
+    width: calc(100% - 32px);
+  }
+  @media (max-width: 600px) {
+    .embed-shell { padding: 0; }
+    .embed-shell .modal-panel { width: 100%; max-height: 100vh; height: 100vh; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="embed-shell">
+  <div class="modal-panel">
+    <header class="modal-head">
+      <div class="modal-head-left">
+        <span class="modal-status-dot" id="status-dot"></span>
+        <div>
+          <h2 class="modal-title" id="modal-title">Entretien avec Léa</h2>
+          <p class="modal-sub" id="modal-status">Prêt à démarrer</p>
+        </div>
+      </div>
+      <button class="modal-close" type="button" id="btn-close-embed" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </header>
+
+    <div class="modal-body">
+      <div class="stage stage-brief active" data-stage="brief">
+        <div class="brief-grid">
+          <div class="brief-card">
+            <span class="brief-label">Candidat</span>
+            <strong>Préqualification IA</strong>
+            <span class="brief-meta">Entretien vocal automatisé</span>
+          </div>
+          <div class="brief-card">
+            <span class="brief-label">Poste</span>
+            <strong>Configuré par Wink</strong>
+            <span class="brief-meta">Vos questions, vos critères</span>
+          </div>
+          <div class="brief-card">
+            <span class="brief-label">Durée</span>
+            <strong>~ 8 minutes</strong>
+            <span class="brief-meta">Compte-rendu immédiat</span>
+          </div>
+        </div>
+
+        <div class="consent">
+          <p><strong>Avant de démarrer :</strong> Léa est une IA. Cet échange est conservé sous votre politique RGPD. Aucune donnée ne sort de l'Union européenne. Cliquez ci-dessous pour autoriser votre micro.</p>
+        </div>
+
+        <button class="btn btn-primary btn-xl btn-start" id="btn-start" type="button">
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </span>
+          <span id="btn-start-label">Autoriser le micro et démarrer</span>
+        </button>
+      </div>
+
+      <div class="stage stage-live" data-stage="live">
+        <div class="orb-wrap">
+          <div class="orb" id="orb">
+            <div class="orb-bars" id="orb-bars">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="orb-ring orb-ring-1"></div>
+          <div class="orb-ring orb-ring-2"></div>
+          <div class="orb-ring orb-ring-3"></div>
+        </div>
+
+        <div class="live-status" id="live-status">Connexion à Léa…</div>
+
+        <div class="transcript" id="transcript" aria-live="polite">
+          <p class="transcript-empty">La transcription apparaît ici en direct.</p>
+        </div>
+
+        <div class="live-controls">
+          <button class="ctrl" id="btn-mute" type="button" aria-pressed="false">
+            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <span class="ctrl-label">Micro</span>
+          </button>
+          <button class="ctrl ctrl-end" id="btn-end" type="button">
+            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="23" y1="1" x2="1" y2="23"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91"/></svg>
+            <span class="ctrl-label">Terminer</span>
+          </button>
+          <button class="ctrl" id="btn-text" type="button">
+            <svg class="ctrl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="ctrl-label">Texte</span>
+          </button>
+        </div>
+
+        <form class="text-fallback" id="text-fallback" hidden>
+          <input type="text" id="text-input" placeholder="Saisir votre réponse en français…" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+      </div>
+
+      <div class="stage stage-end" data-stage="end">
+        <div class="end-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Entretien terminé</h3>
+        <p>Compte-rendu transmis à l'équipe RH.<br>Retour sous 5 à 7 jours ouvrés.</p>
+        <button class="btn btn-ghost" id="btn-close-embed-2" type="button">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/@elevenlabs/client@1.7.0/dist/lib.iife.js"
+        integrity="sha384-ss1PbqLcbnf7xEFU7qGCIukLL4lbjzCNq7PAjgRsKRelIIyJECt8iFKvJDlASKXw"
+        crossorigin="anonymous"></script>
+<script>
+// Stub the elements that app.js expects; reuse the same wiring.
+window.WINK_EMBED_MODE = true;
+</script>
+<script src="./app.js"></script>
+<script>
+// Embed-specific: bridge close buttons to parent window via postMessage.
+// Target origin is taken from document.referrer (the embedding page) so we
+// never broadcast with "*" — protects against unrelated frames intercepting.
+(function () {
+  let parentOrigin = "";
+  try { parentOrigin = document.referrer ? new URL(document.referrer).origin : ""; } catch (_) {}
+  function notifyClose() {
+    if (!parentOrigin || window.parent === window) return;
+    try { window.parent.postMessage({ type: "wink:close" }, parentOrigin); } catch (e) {}
+  }
+  document.getElementById("btn-close-embed").addEventListener("click", notifyClose);
+  const btn2 = document.getElementById("btn-close-embed-2");
+  if (btn2) btn2.addEventListener("click", notifyClose);
+})();
+</script>
+</body>
+</html>
