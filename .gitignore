@@ -13,13 +13,13 @@ dist/
 *.log
 scripts/agent-ids.txt
 
-# Candidate PII — never commit to public repo
-*.doc
-*.docx
-CV*
-LM*
-QUESTIONNAIRE*
-CHARGE*
+# Candidate PII — never commit to public repo (root-level only, exact match)
+/*.doc
+/*.docx
+/CV.*
+/LM.*
+/QUESTIONNAIRE *
+/CHARGE *
 
 # Real candidate KB (re-uploaded directly to ElevenLabs, never to git)
 kb/wink-recruitment-fr.md
