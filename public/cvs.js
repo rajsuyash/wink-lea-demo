@@ -32,7 +32,7 @@ Points à creuser pendant l'entretien :
 - Aucune expérience explicite des instructions M57 / M4 — à vérifier.
 - Aucune expérience explicite d'une collectivité territoriale (uniquement secteur hospitalier + privé) — à vérifier.
 - Très solide sur paie + factures, à valider sur la partie budgétaire pure (chapitres, AP/CP, virements de crédit).`,
-    firstMessage: `Bonjour Madame Dupont, je suis Léa, l'assistante vocale automatisée de Wink. Cet échange concerne votre candidature au poste d'Agent chargé de la gestion budgétaire et comptable à Montélimar-Agglomération. Je vous précise tout de suite que je suis une intelligence artificielle. Nous avons une dizaine de minutes ensemble. Je vois que vous avez plus de treize ans d'expérience au Centre Hospitalier Claude Dejean — pouvez-vous me décrire en quelques mots ce que vous y faites au quotidien sur la partie comptable ?`
+    firstMessage: `Bonjour Madame Dupont, je suis Léa, l'assistante de recrutement automatisée de la ville de Montélimar. Cet échange concerne votre candidature au poste d'Agent chargé de la gestion budgétaire et comptable. Je vous précise tout de suite que je suis une intelligence artificielle. Nous avons une dizaine de minutes ensemble. Je vois que vous avez plus de treize ans d'expérience au Centre Hospitalier Claude Dejean — pouvez-vous me décrire en quelques mots ce que vous y faites au quotidien sur la partie comptable ?`
   }
 ];
 
